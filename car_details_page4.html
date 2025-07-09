@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Maruti Alto VXI - Car Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .car-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .shine-effect {
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-medium">Back</span>
+                </button>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i data-lucide="heart" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i data-lucide="share" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Car Title & Price -->
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">2022 Maruti Alto VXI</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                <span class="flex items-center gap-1">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    Metro Walk, Rohini, New Delhi
+                </span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
+                    CARS24 ASSURED
+                </span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - Car Images & Details -->
+            <div class="lg:col-span-2">
+                <!-- Car Image Gallery -->
+                <div class="relative mb-8">
+                    <div class="bg-white rounded-2xl p-6 car-shadow">
+                        <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-video">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Cg transform='translate(50 80)'%3E%3Crect x='0' y='60' width='300' height='100' rx='50' fill='%23ffffff' stroke='%23e5e7eb' stroke-width='2'/%3E%3Crect x='20' y='40' width='260' height='80' rx='40' fill='%23ffffff' stroke='%23e5e7eb' stroke-width='2'/%3E%3Ccircle cx='80' cy='160' r='25' fill='%23ef4444'/%3E%3Ccircle cx='220' cy='160' r='25' fill='%23ef4444'/%3E%3Ccircle cx='80' cy='160' r='15' fill='%23ffffff'/%3E%3Ccircle cx='220' cy='160' r='15' fill='%23ffffff'/%3E%3Cpath d='M20 100 L50 80 L250 80 L280 100' stroke='%23374151' stroke-width='2' fill='none'/%3E%3C/g%3E%3C/svg%3E" alt="2022 Maruti Alto VXI" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 shine-effect"></div>
+                            <div class="absolute top-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+                                1/45
+                            </div>
+                        </div>
+                        
+                        <!-- Image Navigation -->
+                        <div class="flex justify-center mt-6 space-x-2">
+                            <button class="w-16 h-16 rounded-lg border-2 border-orange-500 bg-orange-50 flex items-center justify-center">
+                                <i data-lucide="camera" class="w-6 h-6 text-orange-600"></i>
+                            </button>
+                            <button class="w-16 h-16 rounded-lg border border-gray-300 hover:border-gray-400 flex items-center justify-center">
+                                <i data-lucide="layout-dashboard" class="w-6 h-6 text-gray-600"></i>
+                            </button>
+                            <button class="w-16 h-16 rounded-lg border border-gray-300 hover:border-gray-400 flex items-center justify-center">
+                                <i data-lucide="settings" class="w-6 h-6 text-gray-600"></i>
+                            </button>
+                            <button class="w-16 h-16 rounded-lg border border-gray-300 hover:border-gray-400 flex items-center justify-center">
+                                <i data-lucide="star" class="w-6 h-6 text-gray-600"></i>
+                            </button>
+                            <button class="w-16 h-16 rounded-lg border border-gray-300 hover:border-gray-400 flex items-center justify-center">
+                                <i data-lucide="circle" class="w-6 h-6 text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Overview -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                        <i data-lucide="info" class="w-5 h-5 text-blue-600"></i>
+                        Car Overview
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Registration Year</p>
+                            <p class="font-semibold text-gray-900">Oct 2022</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Fuel Type</p>
+                            <p class="font-semibold text-gray-900">Petrol</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">KM Driven</p>
+                            <p class="font-semibold text-gray-900">42,477 km</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Transmission</p>
+                            <p class="font-semibold text-gray-900">Manual</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Engine Capacity</p>
+                            <p class="font-semibold text-gray-900">796cc</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Ownership</p>
+                            <p class="font-semibold text-gray-900">1st Owner</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Registration Number</p>
+                            <p class="font-semibold text-gray-900">DL3C**0248</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Spare Key</p>
+                            <p class="font-semibold text-gray-900">No</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Insurance</p>
+                            <p class="font-semibold text-gray-900">Need Renewal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                        <i data-lucide="star" class="w-5 h-5 text-blue-600"></i>
+                        Features
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="feature-card p-4 rounded-lg bg-blue-50 border border-blue-200">
+                            <i data-lucide="bluetooth" class="w-6 h-6 text-blue-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">Bluetooth</p>
+                            <p class="text-xs text-gray-600">Connectivity</p>
+                        </div>
+                        <div class="feature-card p-4 rounded-lg bg-green-50 border border-green-200">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-green-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">ABS</p>
+                            <p class="text-xs text-gray-600">Anti-lock Braking</p>
+                        </div>
+                        <div class="feature-card p-4 rounded-lg bg-purple-50 border border-purple-200">
+                            <i data-lucide="wind" class="w-6 h-6 text-purple-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">Air Conditioner</p>
+                            <p class="text-xs text-gray-600">Climate Control</p>
+                        </div>
+                        <div class="feature-card p-4 rounded-lg bg-orange-50 border border-orange-200">
+                            <i data-lucide="zap" class="w-6 h-6 text-orange-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">EBD</p>
+                            <p class="text-xs text-gray-600">Brakeforce Distribution</p>
+                        </div>
+                        <div class="feature-card p-4 rounded-lg bg-red-50 border border-red-200">
+                            <i data-lucide="shield" class="w-6 h-6 text-red-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">Airbags</p>
+                            <p class="text-xs text-gray-600">Safety Feature</p>
+                        </div>
+                        <div class="feature-card p-4 rounded-lg bg-indigo-50 border border-indigo-200">
+                            <i data-lucide="lock" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">Central Locking</p>
+                            <p class="text-xs text-gray-600">Security</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inspection Report -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                        <i data-lucide="clipboard-check" class="w-5 h-5 text-blue-600"></i>
+                        Car Inspection Report
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i data-lucide="car" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">No Accident</p>
+                            <p class="text-xs text-gray-600">History</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i data-lucide="gauge" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">No Odometer</p>
+                            <p class="text-xs text-gray-600">Tampering</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i data-lucide="droplets" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">No Water</p>
+                            <p class="text-xs text-gray-600">Damage</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i data-lucide="award" class="w-8 h-8 text-green-600 mx-auto mb-2"></i>
+                            <p class="text-sm font-medium text-gray-900">140-Quality</p>
+                            <p class="text-xs text-gray-600">Checks</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                        <p class="text-sm font-medium text-green-800">This car has no repainted parts. Nice!</p>
+                    </div>
+                </div>
+
+                <!-- CARE+ Protection -->
+                <div class="gradient-bg rounded-2xl p-6 text-white mb-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">PROTECT YOUR CAR WITH</h3>
+                            <h2 class="text-2xl font-bold">CARE+</h2>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            <span>Extended Warranty</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                            <span>Annual Servicing</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>Roadside Assistance (RSA)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                            <span>Assured Buyback</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Pricing & CTA -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24">
+                    <!-- Pricing Card -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                        <div class="text-center mb-6">
+                            <p class="text-sm text-gray-600 mb-2">EMI on Zero Down Payment</p>
+                            <div class="text-3xl font-bold text-gray-900 mb-2">₹6,041/mo</div>
+                            <div class="text-xl font-semibold text-gray-900 mb-1">₹3.09 lakh</div>
+                            <p class="text-sm text-gray-500">+₹17,474 other charges</p>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                                Free Test Drive
+                            </button>
+                            <button class="w-full bg-orange-100 hover:bg-orange-200 text-orange-800 py-3 px-4 rounded-lg font-semibold transition-colors">
+                                Pay Token - 100% Refundable
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-3 text-sm">
+                            <button class="w-full text-left text-blue-600 hover:text-blue-800 flex items-center justify-between">
+                                <span>Check Eligibility</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <button class="w-full text-left text-blue-600 hover:text-blue-800 flex items-center justify-between">
+                                <span>Price Breakdown</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            Call Us
+                        </button>
+                    </div>
+
+                    <!-- Great Things -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-lg font-semibold mb-4">Great Things About This Car</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <i data-lucide="wrench" class="w-4 h-4 text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Regularly Serviced at OEM</p>
+                                    <p class="text-sm text-gray-600">Service maintained at dealership</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Single Owner</p>
+                                    <p class="text-sm text-gray-600">First owner vehicle</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Quality Assured</p>
+                                    <p class="text-sm text-gray-600">140-point quality check</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Add smooth scrolling behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add hover effects to feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add click handlers for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add pulse effect
+                this.classList.add('pulse-animation');
+                setTimeout(() => {
+                    this.classList.remove('pulse-animation');
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>

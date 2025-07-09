@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 BMW M4 Competition - Car Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .image-zoom {
+            transition: transform 0.3s ease;
+        }
+        .image-zoom:hover {
+            transform: scale(1.05);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .spec-item {
+            transition: all 0.3s ease;
+        }
+        .spec-item:hover {
+            transform: translateX(5px);
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-900">AutoDeals</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Browse Cars</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Sell</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                </nav>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8 text-sm">
+            <a href="#" class="text-blue-600 hover:text-blue-800">Home</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <a href="#" class="text-blue-600 hover:text-blue-800">Cars</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <a href="#" class="text-blue-600 hover:text-blue-800">BMW</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <span class="text-gray-600">M4 Competition</span>
+        </nav>
+
+        <!-- Car Header -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8 fade-in">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">2023 BMW M4 Competition</h1>
+                    <p class="text-gray-600 mb-4">Coupe • 8,500 miles • Atlanta, GA</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Excellent Condition</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">One Owner</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-3xl font-bold text-gray-900 mb-2">$89,995</div>
+                    <div class="text-sm text-gray-600 mb-4">Market value: $92,000</div>
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                        Contact Seller
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Image Gallery -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden fade-in">
+                    <!-- Main Image -->
+                    <div class="relative">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+                             alt="BMW M4 Competition" 
+                             class="w-full h-96 object-cover">
+                        <div class="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-lg">
+                            <span id="imageCounter">1 / 8</span>
+                        </div>
+                        <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full transition-all">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full transition-all">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Thumbnail Gallery -->
+                    <div class="p-4">
+                        <div class="grid grid-cols-4 md:grid-cols-8 gap-2" id="thumbnails">
+                            <!-- Thumbnails will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Details -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-8 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Vehicle Details</h2>
+                    
+                    <!-- Specifications Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="spec-item p-4 border rounded-lg">
+                            <h3 class="font-semibold text-gray-700 mb-2">Basic Information</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Year:</span>
+                                    <span class="font-medium">2023</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Make:</span>
+                                    <span class="font-medium">BMW</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Model:</span>
+                                    <span class="font-medium">M4 Competition</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Body Type:</span>
+                                    <span class="font-medium">Coupe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item p-4 border rounded-lg">
+                            <h3 class="font-semibold text-gray-700 mb-2">Performance</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Engine:</span>
+                                    <span class="font-medium">3.0L Twin-Turbo I6</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Horsepower:</span>
+                                    <span class="font-medium">503 HP</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Transmission:</span>
+                                    <span class="font-medium">8-Speed Automatic</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Drivetrain:</span>
+                                    <span class="font-medium">RWD</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item p-4 border rounded-lg">
+                            <h3 class="font-semibold text-gray-700 mb-2">Fuel & Efficiency</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Fuel Type:</span>
+                                    <span class="font-medium">Premium Gasoline</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">MPG City:</span>
+                                    <span class="font-medium">16 MPG</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">MPG Highway:</span>
+                                    <span class="font-medium">23 MPG</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Combined:</span>
+                                    <span class="font-medium">19 MPG</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item p-4 border rounded-lg">
+                            <h3 class="font-semibold text-gray-700 mb-2">Exterior</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Color:</span>
+                                    <span class="font-medium">Alpine White</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Wheels:</span>
+                                    <span class="font-medium">19" M Wheels</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Sunroof:</span>
+                                    <span class="font-medium">Yes</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Condition:</span>
+                                    <span class="font-medium">Excellent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>M Performance Package</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Adaptive M Suspension</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Carbon Fiber Roof</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>M Carbon Ceramic Brakes</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Harman Kardon Sound System</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Head-Up Display</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Description</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            This stunning 2023 BMW M4 Competition is a true driver's car that combines luxury and performance in perfect harmony. With only 8,500 miles on the odometer, this vehicle has been meticulously maintained and is in excellent condition. The Alpine White exterior paired with the black Merino leather interior creates an elegant and sporty appearance.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-4">
+                            The heart of this machine is the 3.0L twin-turbocharged inline-6 engine producing 503 horsepower, paired with an 8-speed automatic transmission. The M Performance Package includes upgraded suspension, brakes, and aerodynamics for an unparalleled driving experience. This is a rare opportunity to own a barely-used M4 Competition at an exceptional price.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Seller Info -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6 fade-in">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Seller Information</h3>
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+                             alt="Seller" 
+                             class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-medium text-gray-900">Michael Johnson</h4>
+                            <p class="text-sm text-gray-600">Private Seller</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">5.0 (12 reviews)</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Member since 2019</p>
+                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors mb-2">
+                        Contact Seller
+                    </button>
+                    <button class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        View All Listings
+                    </button>
+                </div>
+
+                <!-- Quick Contact -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6 fade-in">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Contact</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(555) 123-4567">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 h-20" placeholder="I'm interested in this BMW M4..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Financing Calculator -->
+                <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Financing Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Vehicle Price</label>
+                            <input type="text" value="$89,995" readonly class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Down Payment</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="$15,000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Loan Term (months)</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>36</option>
+                                <option>48</option>
+                                <option selected>60</option>
+                                <option>72</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Interest Rate (%)</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="4.5">
+                        </div>
+                        <button class="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 transition-colors">
+                            Calculate Payment
+                        </button>
+                        <div class="text-center pt-2">
+                            <p class="text-sm text-gray-600">Estimated Monthly Payment</p>
+                            <p class="text-2xl font-bold text-gray-900">$1,247</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">AutoDeals</h3>
+                    <p class="text-gray-400">Find your perfect car with our extensive classified listings.</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Browse Cars</a></li>
+                        <li><a href="#" class="hover:text-white">Sell Your Car</a></li>
+                        <li><a href="#" class="hover:text-white">Financing</a></li>
+                        <li><a href="#" class="hover:text-white">Insurance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AutoDeals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Image gallery functionality
+        const images = [
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1494976688716-f228cb057c22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1549399105-8ffb1c19b4f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            'https://images.unsplash.com/photo-1533473359331-0ccf57883f18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80'
+        ];
+
+        let currentImageIndex = 0;
+        const mainImage = document.getElementById('mainImage');
+        const imageCounter = document.getElementById('imageCounter');
+        const thumbnailsContainer = document.getElementById('thumbnails');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Initialize thumbnails
+        function initializeThumbnails() {
+            thumbnailsContainer.innerHTML = '';
+            images.forEach((img, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = img;
+                thumbnail.alt = `Car image ${index + 1}`;
+                thumbnail.className = `w-full h-16 object-cover rounded cursor-pointer border-2 transition-all image-zoom ${index === 0 ? 'border-blue-500' : 'border-gray-200 hover:border-gray-400'}`;
+                thumbnail.onclick = () => showImage(index);
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+        }
+
+        // Show specific image
+        function showImage(index) {
+            currentImageIndex = index;
+            mainImage.src = images[index];
+            imageCounter.textContent = `${index + 1} / ${images.length}`;
+            
+            // Update thumbnail borders
+            const thumbnails = thumbnailsContainer.querySelectorAll('img');
+            thumbnails.forEach((thumb, i) => {
+                thumb.className = `w-full h-16 object-cover rounded cursor-pointer border-2 transition-all image-zoom ${i === index ? 'border-blue-500' : 'border-gray-200 hover:border-gray-400'}`;
+            });
+        }
+
+        // Previous image
+        prevBtn.onclick = () => {
+            currentImageIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
+            showImage(currentImageIndex);
+        };
+
+        // Next image
+        nextBtn.onclick = () => {
+            currentImageIndex = currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+            showImage(currentImageIndex);
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevBtn.onclick();
+            if (e.key === 'ArrowRight') nextBtn.onclick();
+        });
+
+        // Contact form functionality
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! The seller will contact you soon.');
+        });
+
+        // Financing calculator
+        document.querySelector('.bg-gray-800').addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const vehiclePrice = 89995;
+            const downPayment = parseFloat(document.querySelector('input[placeholder="$15,000"]').value.replace(/[$,]/g, '')) || 15000;
+            const loanTerm = parseInt(document.querySelector('select').value);
+            const interestRate = parseFloat(document.querySelector('input[placeholder="4.5"]').value) || 4.5;
+            
+            const loanAmount = vehiclePrice - downPayment;
+            const monthlyRate = interestRate / 100 / 12;
+            const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
+            
+            document.querySelector('.text-2xl.font-bold.text-gray-900').textContent = ' + Math.round(monthlyPayment).toLocaleString();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-to-top functionality
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Show/hide back to top button
+            if (scrollTop > 300) {
+                if (!document.querySelector('.back-to-top')) {
+                    const backToTop = document.createElement('button');
+                    backToTop.className = 'back-to-top fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all z-50';
+                    backToTop.innerHTML = '↑';
+                    backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.body.appendChild(backToTop);
+                }
+            } else {
+                const backToTop = document.querySelector('.back-to-top');
+                if (backToTop) {
+                    backToTop.remove();
+                }
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+        });
+
+        // Lazy loading for images
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '50px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.add('fade-in');
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, observerOptions);
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeThumbnails();
+            
+            // Observe all images for lazy loading
+            document.querySelectorAll('img').forEach(img => {
+                imageObserver.observe(img);
+            });
+            
+            // Add fade-in animation to elements
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Add favorites functionality
+        let isFavorite = false;
+        function toggleFavorite() {
+            isFavorite = !isFavorite;
+            const heartIcon = document.querySelector('.heart-icon');
+            if (heartIcon) {
+                heartIcon.classList.toggle('text-red-500');
+                heartIcon.classList.toggle('fill-current');
+            }
+        }
+
+        // Add share functionality
+        function shareVehicle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '2023 BMW M4 Competition',
+                    text: 'Check out this amazing BMW M4 Competition for sale!',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback to copying URL
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+
+        // Add print functionality
+        function printPage() {
+            window.print();
+        }
+
+        // Vehicle comparison feature
+        let comparisonList = JSON.parse(localStorage.getItem('comparisonList') || '[]');
+        
+        function addToComparison() {
+            const vehicle = {
+                id: 'bmw-m4-2023',
+                make: 'BMW',
+                model: 'M4 Competition',
+                year: 2023,
+                price: 89995,
+                image: images[0]
+            };
+            
+            if (!comparisonList.find(v => v.id === vehicle.id)) {
+                comparisonList.push(vehicle);
+                localStorage.setItem('comparisonList', JSON.stringify(comparisonList));
+                alert('Vehicle added to comparison list!');
+            } else {
+                alert('Vehicle already in comparison list!');
+            }
+        }
+
+        // Initialize the page
+        window.addEventListener('load', () => {
+            // Add loading animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
