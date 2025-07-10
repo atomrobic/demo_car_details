@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<title>AutoMart - Used Car Marketplace</title>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AutoMart - Used Car Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style type="text/tailwindcss">
     :root {
       --primary-color: #0c77f2;
       --primary-color-hover: #0a63ce;
@@ -16,237 +18,252 @@
   </style>
 </head>
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans',_'Noto_Sans',_sans-serif]">
-<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
-<header class="sticky top-0 z-20 w-full bg-white shadow-sm">
-<div class="container mx-auto flex items-center justify-between px-6 py-4">
-<div class="flex items-center gap-8">
-<a class="flex items-center gap-2 text-2xl font-bold text-gray-900" href="#">
-<svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 0 1 3.375-3.375h9.75a3.375 3.375 0 0 1 3.375 3.375v1.875M10.5 6h3m-3 3h3m5.25 3H18a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 18 4.5h-12A2.25 2.25 0 0 0 3.75 6.75v8.5A2.25 2.25 0 0 0 6 17.25h1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-<span>AutoMart</span>
-</a>
-<nav class="hidden items-center gap-8 md:flex">
-<a class="text-gray-600 hover:text-gray-900" href="#">Home</a>
-<a class="text-gray-600 hover:text-gray-900" href="#">About</a>
-<a class="text-gray-600 hover:text-gray-900" href="#">Contact</a>
-<a class="font-semibold text-gray-900 hover:text-blue-600" href="#">Post Your Car</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<div class="hidden lg:block">
-<label class="relative">
-<span class="sr-only">Search</span>
-<span class="absolute inset-y-0 left-0 flex items-center pl-3">
-<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</span>
-<input class="w-full rounded-full border border-gray-300 bg-gray-100 py-2 pl-10 pr-4 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search cars..." type="search"/>
-</label>
-</div>
-<a class="rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100" href="#">Login</a>
-<a class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)]" href="#">Register</a>
-<button class="p-2 md:hidden">
-<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-</div>
-</header>
-<main class="container mx-auto flex flex-1 gap-8 px-6 py-8">
-<aside class="hidden w-72 flex-shrink-0 lg:block">
-<div class="sticky top-28 rounded-xl bg-white p-6 shadow-sm">
-<h3 class="text-xl font-bold text-gray-900">Filters</h3>
-<div class="mt-6 space-y-6">
-<div>
-<label class="block text-sm font-medium text-gray-700" for="brand">Brand</label>
-<select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="brand" name="brand">
-<option>All Brands</option>
-<option>Honda</option>
-<option>Toyota</option>
-<option>Hyundai</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700" for="price">Price Range</label>
-<input class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-blue-600" id="price" max="50000" min="5000" name="price" step="1000" type="range"/>
-<div class="mt-1 flex justify-between text-xs text-gray-500">
-<span>$5k</span>
-<span>$50k+</span>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700" for="fuel">Fuel Type</label>
-<select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="fuel" name="fuel">
-<option>All Types</option>
-<option>Petrol</option>
-<option>Diesel</option>
-<option>Electric</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700" for="transmission">Transmission</label>
-<select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="transmission" name="transmission">
-<option>All</option>
-<option>Manual</option>
-<option>Automatic</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700" for="year">Year</label>
-<input class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-blue-600" id="year" max="2024" min="2010" name="year" step="1" type="range"/>
-<div class="mt-1 flex justify-between text-xs text-gray-500">
-<span>2010</span>
-<span>2024</span>
-</div>
-</div>
-<div class="flex items-center justify-between pt-4">
-<button class="rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Reset</button>
-<button class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)]">Apply Filters</button>
-</div>
-</div>
-</div>
-</aside>
-<div class="flex-1">
-<div class="flex items-baseline justify-between">
-<h1 class="text-4xl font-bold tracking-tight text-gray-900">Used Cars For Sale</h1>
-<div class="flex items-center">
-<label class="sr-only" for="sort-by">Sort by</label>
-<select class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="sort-by" name="sort-by">
-<option>Relevance</option>
-<option>Price: Low to High</option>
-<option>Price: High to Low</option>
-<option>Newest Listings</option>
-</select>
-</div>
-</div>
-<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Honda City" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJP-sr5Rics3yegVIs6SYg6k1zFshMmYU8LfugGafmY3SjnMI1K-RYR_ILlCwggtB1EDzFMS3tGipVyXyHlGOSCCgavTD7w_Kqul5hB4pMF7m5FJjvPgk3pZBdW0mXYm6molII_vxtduphdO0VN0SjOmypBRgc7oEx0takKXDKyBNMUrDLL8IR6WuReqKKk4m0B_TZhOrk5s8WnamGGgF9NPWDRi1HP0KDorpgev3mrVcpPTauZUedFLH-mWWhDKEnXQyfsD3XQRk"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Honda City 2018 VXi</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$8,500</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 50,000</p>
-<p><span class="font-semibold">Fuel:</span> Petrol</p>
-<p><span class="font-semibold">Transmission:</span> Manual</p>
-<p><span class="font-semibold">Owner:</span> 1st</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Toyota Corolla" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc8-HfTY6Kt8XWcZSW6QNIz-xoVwVwPJEW6p3FKmph42BCSXdq91chnrrXMQf6vWY7gXmuaTc2VeemMnCxT45AfURhZSon5AuML_f1Hhr4nG74GvpX0fRWbOip26lkU20i8M1uxbGorsL320kURo_Zk2c6Jx-3kNn0SVoehim6jhcVVWe1rt9QHsHpB-YaUGI7DRhtNQCUBA7EV5FKjKl_1Q5pfSKJk958Hhhfi2Nc7WBVur7ksSbRNFEq1RC2GeDcRblGDGdT7-g"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Toyota Corolla 2019 GLi</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$12,000</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 40,000</p>
-<p><span class="font-semibold">Fuel:</span> Petrol</p>
-<p><span class="font-semibold">Transmission:</span> Automatic</p>
-<p><span class="font-semibold">Owner:</span> 2nd</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Hyundai i20" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDkz3rRF5CBxgpe6K6m7hXUcCE85uiNRJHi_alAhF8dCV3DZlptnptEqndvEMY9yd6MGEAYuHK-xLWwlcHAUJunv2_p8eGwY09-oVLtMlDyZAZ03NDxrI6W2z70KIUv9JiRVXvDakDmy81dEw9jNEA8hnTBzFyX8HzVruvKlVNMtYC9_lvKx9cfaqycFsLCCRyWVw_Y4VI01GlmYdoGrXL7uWccnRlHxdxCk73lPCtpJN-4F0mYq4-Ua4VZzBiZMP80ms7VGsdmBE"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Hyundai i20 2020 Sportz</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$7,000</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 30,000</p>
-<p><span class="font-semibold">Fuel:</span> Diesel</p>
-<p><span class="font-semibold">Transmission:</span> Manual</p>
-<p><span class="font-semibold">Owner:</span> 1st</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Maruti Swift" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyA_E1LURcmuufK2za3HR-NkaAzLTBwa2UoJA_w4Qb11e43NdgMPQi54bn_o3JqNnGkKvf04I4K6IkddYZTmpRPi0FGu6xmjy8rkH-BU_6j0d5Tzb6uCOQeMwgPPiccYWJNXoSKtmiVaEcsEYw2U0sCuzYAZTjcS4nbiluwz3I7rDAwcb3j45oP3i4mWuWO0hI_FObwSc6rh_-RRhH0VSy-fjYIjHwUJybhhxNSsbPmz11Ly51JPlJipeuVyWoNhjVDa_azm4Pm9c"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Maruti Swift 2017 LXi</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$5,500</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 60,000</p>
-<p><span class="font-semibold">Fuel:</span> Petrol</p>
-<p><span class="font-semibold">Transmission:</span> Manual</p>
-<p><span class="font-semibold">Owner:</span> 1st</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Ford EcoSport" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtp9AWkaYOwGs8y5s4L7sdyxsrAdT4g1qLHWMO0BEIIYb74B7diFzQVZQ54cFkyx4SAS3Yz99pHNZzTjMHVoD5tfYdXrFgkwJAUxSjat4P1fDSLc7qARfQOHi0bbV50ZRcJM6P4yDNGoO0nHHblgaO79LfrFdiYpmh_WX0uRCKED5hemyOlimwgdQ3oWTAuLlkiatVIBb8EP5kzcA1eHZk2YfPKLUuXYQonrZH1HFlDVSehHCpqfKuUyPYyWv_66C_0VqiW9oLmpA"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Ford EcoSport 2016 Titanium</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$9,000</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 70,000</p>
-<p><span class="font-semibold">Fuel:</span> Diesel</p>
-<p><span class="font-semibold">Transmission:</span> Manual</p>
-<p><span class="font-semibold">Owner:</span> 2nd</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-<div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
-<div class="relative">
-<img alt="Volkswagen Polo" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Gd2dfFx0Wr_131itAcpS0N-dqZKVT_WtNnHRZ4VRoXTE_6qjRsHZ05_p7h3Wyl5doxpSUzRxvLj9Y3pe6cLNW06tVBiSQE_Rkrz0WZmCup52GwnIo2umemH2VpH0RybuNOCgonAiq8Mb3rV5HGzKbixkIk-bEdpYzibjQWuV7iaiSN47TpyD7MCJSEs0ZcU8kc-2nMNKG6LzzpiIaSlb_2_GYS1h72oGE9pS7d_A5o5b314YQBf-AT3xzkuIqiQWIqXeUlhLPqo"/>
-<div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-</div>
-<div class="p-6">
-<h3 class="text-lg font-bold text-gray-900">Volkswagen Polo 2015 Highline</h3>
-<p class="mt-1 text-2xl font-extrabold text-blue-600">$6,500</p>
-<div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-<p><span class="font-semibold">KM Driven:</span> 80,000</p>
-<p><span class="font-semibold">Fuel:</span> Petrol</p>
-<p><span class="font-semibold">Transmission:</span> Manual</p>
-<p><span class="font-semibold">Owner:</span> 1st</p>
-</div>
-<button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
-</div>
-</div>
-</div>
-<nav aria-label="Pagination" class="mt-12 flex items-center justify-center">
-<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">
-<span class="sr-only">Previous</span>
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-<path clip-rule="evenodd" d="M12.79 5.23a.75.75 0 010 1.06L9.06 10l3.73 3.71a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" fill-rule="evenodd"></path>
-</svg>
-</a>
-<a aria-current="page" class="relative z-10 inline-flex items-center bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" href="#">1</a>
-<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">2</a>
-<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
-<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
-<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">10</a>
-<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">
-<span class="sr-only">Next</span>
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-<path clip-rule="evenodd" d="M7.21 14.77a.75.75 0 010-1.06L10.94 10 7.21 6.29a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z" fill-rule="evenodd"></path>
-</svg>
-</a>
-</nav>
-</div>
-</main>
+  <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+    <header class="sticky top-0 z-20 w-full bg-white shadow-sm">
+      <div class="container mx-auto flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-8">
+          <a class="flex items-center gap-2 text-2xl font-bold text-gray-900" href="#">
+            <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 0 1 3.375-3.375h9.75a3.375 3.375 0 0 1 3.375 3.375v1.875M10.5 6h3m-3 3h3m5.25 3H18a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 18 4.5h-12A2.25 2.25 0 0 0 3.75 6.75v8.5A2.25 2.25 0 0 0 6 17.25h1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span>AutoMart</span>
+          </a>
+          <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-gray-600 hover:text-gray-900" href="#">Home</a>
+            <a class="text-gray-600 hover:text-gray-900" href="#">About</a>
+            <a class="text-gray-600 hover:text-gray-900" href="#">Contact</a>
+            <a class="font-semibold text-gray-900 hover:text-blue-600" href="#">Post Your Car</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="hidden lg:block">
+            <label class="relative">
+              <span class="sr-only">Search</span>
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+              </span>
+              <input class="w-full rounded-full border border-gray-300 bg-gray-100 py-2 pl-10 pr-4 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search cars..." type="search"/>
+            </label>
+          </div>
+          <a class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)]" href="#">Register</a>
+          <button class="p-2 md:hidden">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <main class="container mx-auto flex flex-1 gap-8 px-6 py-8">
+      <aside class="hidden w-72 flex-shrink-0 lg:block">
+        <div class="sticky top-28 rounded-xl bg-white p-6 shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900">Filters</h3>
+          <div class="mt-6 space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700" for="brand">Brand</label>
+              <select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="brand" name="brand">
+                <option>All Brands</option>
+                <option>Honda</option>
+                <option>Toyota</option>
+                <option>Hyundai</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700" for="price">Price Range</label>
+              <input class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-blue-600" id="price" max="50000" min="5000" name="price" step="1000" type="range"/>
+              <div class="mt-1 flex justify-between text-xs text-gray-500">
+                <span>$5k</span>
+                <span>$50k+</span>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700" for="fuel">Fuel Type</label>
+              <select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="fuel" name="fuel">
+                <option>All Types</option>
+                <option>Petrol</option>
+                <option>Diesel</option>
+                <option>Electric</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700" for="transmission">Transmission</label>
+              <select class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="transmission" name="transmission">
+                <option>All</option>
+                <option>Manual</option>
+                <option>Automatic</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700" for="year">Year</label>
+              <input class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-blue-600" id="year" max="2024" min="2010" name="year" step="1" type="range"/>
+              <div class="mt-1 flex justify-between text-xs text-gray-500">
+                <span>2010</span>
+                <span>2024</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4">
+              <button class="rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Reset</button>
+              <button class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary-color-hover)]">Apply Filters</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      
+      <div class="flex-1">
+        <div class="flex items-baseline justify-between">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900">Used Cars For Sale</h1>
+          <div class="flex items-center">
+            <label class="sr-only" for="sort-by">Sort by</label>
+            <select class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="sort-by" name="sort-by">
+              <option>Relevance</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest Listings</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Updated card grid with responsive columns -->
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Honda City" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJP-sr5Rics3yegVIs6SYg6k1zFshMmYU8LfugGafmY3SjnMI1K-RYR_ILlCwggtB1EDzFMS3tGipVyXyHlGOSCCgavTD7w_Kqul5hB4pMF7m5FJjvPgk3pZBdW0mXYm6molII_vxtduphdO0VN0SjOmypBRgc7oEx0takKXDKyBNMUrDLL8IR6WuReqKKk4m0B_TZhOrk5s8WnamGGgF9NPWDRi1HP0KDorpgev3mrVcpPTauZUedFLH-mWWhDKEnXQyfsD3XQRk"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Honda City 2018 VXi</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$8,500</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 50,000</p>
+                <p><span class="font-semibold">Fuel:</span> Petrol</p>
+                <p><span class="font-semibold">Transmission:</span> Manual</p>
+                <p><span class="font-semibold">Owner:</span> 1st</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Toyota Corolla" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc8-HfTY6Kt8XWcZSW6QNIz-xoVwVwPJEW6p3FKmph42BCSXdq91chnrrXMQf6vWY7gXmuaTc2VeemMnCxT45AfURhZSon5AuML_f1Hhr4nG74GvpX0fRWbOip26lkU20i8M1uxbGorsL320kURo_Zk2c6Jx-3kNn0SVoehim6jhcVVWe1rt9QHsHpB-YaUGI7DRhtNQCUBA7EV5FKjKl_1Q5pfSKJk958Hhhfi2Nc7WBVur7ksSbRNFEq1RC2GeDcRblGDGdT7-g"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Toyota Corolla 2019 GLi</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$12,000</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 40,000</p>
+                <p><span class="font-semibold">Fuel:</span> Petrol</p>
+                <p><span class="font-semibold">Transmission:</span> Automatic</p>
+                <p><span class="font-semibold">Owner:</span> 2nd</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Hyundai i20" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDkz3rRF5CBxgpe6K6m7hXUcCE85uiNRJHi_alAhF8dCV3DZlptnptEqndvEMY9yd6MGEAYuHK-xLWwlcHAUJunv2_p8eGwY09-oVLtMlDyZAZ03NDxrI6W2z70KIUv9JiRVXvDakDmy81dEw9jNEA8hnTBzFyX8HzVruvKlVNMtYC9_lvKx9cfaqycFsLCCRyWVw_Y4VI01GlmYdoGrXL7uWccnRlHxdxCk73lPCtpJN-4F0mYq4-Ua4VZzBiZMP80ms7VGsdmBE"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Hyundai i20 2020 Sportz</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$7,000</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 30,000</p>
+                <p><span class="font-semibold">Fuel:</span> Diesel</p>
+                <p><span class="font-semibold">Transmission:</span> Manual</p>
+                <p><span class="font-semibold">Owner:</span> 1st</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Maruti Swift" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyA_E1LURcmuufK2za3HR-NkaAzLTBwa2UoJA_w4Qb11e43NdgMPQi54bn_o3JqNnGkKvf04I4K6IkddYZTmpRPi0FGu6xmjy8rkH-BU_6j0d5Tzb6uCOQeMwgPPiccYWJNXoSKtmiVaEcsEYw2U0sCuzYAZTjcS4nbiluwz3I7rDAwcb3j45oP3i4mWuWO0hI_FObwSc6rh_-RRhH0VSy-fjYIjHwUJybhhxNSsbPmz11Ly51JPlJipeuVyWoNhjVDa_azm4Pm9c"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Maruti Swift 2017 LXi</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$5,500</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 60,000</p>
+                <p><span class="font-semibold">Fuel:</span> Petrol</p>
+                <p><span class="font-semibold">Transmission:</span> Manual</p>
+                <p><span class="font-semibold">Owner:</span> 1st</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+          
+          <!-- Card 5 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Ford EcoSport" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtp9AWkaYOwGs8y5s4L7sdyxsrAdT4g1qLHWMO0BEIIYb74B7diFzQVZQ54cFkyx4SAS3Yz99pHNZzTjMHVoD5tfYdXrFgkwJAUxSjat4P1fDSLc7qARfQOHi0bbV50ZRcJM6P4yDNGoO0nHHblgaO79LfrFdiYpmh_WX0uRCKED5hemyOlimwgdQ3oWTAuLlkiatVIBb8EP5kzcA1eHZk2YfPKLUuXYQonrZH1HFlDVSehHCpqfKuUyPYyWv_66C_0VqiW9oLmpA"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Ford EcoSport 2016 Titanium</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$9,000</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 70,000</p>
+                <p><span class="font-semibold">Fuel:</span> Diesel</p>
+                <p><span class="font-semibold">Transmission:</span> Manual</p>
+                <p><span class="font-semibold">Owner:</span> 2nd</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+          
+          <!-- Card 6 -->
+          <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
+            <div class="relative">
+              <img alt="Volkswagen Polo" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Gd2dfFx0Wr_131itAcpS0N-dqZKVT_WtNnHRZ4VRoXTE_6qjRsHZ05_p7h3Wyl5doxpSUzRxvLj9Y3pe6cLNW06tVBiSQE_Rkrz0WZmCup52GwnIo2umemH2VpH0RybuNOCgonAiq8Mb3rV5HGzKbixkIk-bEdpYzibjQWuV7iaiSN47TpyD7MCJSEs0ZcU8kc-2nMNKG6LzzpiIaSlb_2_GYS1h72oGE9pS7d_A5o5b314YQBf-AT3xzkuIqiQWIqXeUlhLPqo"/>
+              <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-gray-900">Volkswagen Polo 2015 Highline</h3>
+              <p class="mt-1 text-2xl font-extrabold text-blue-600">$6,500</p>
+              <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                <p><span class="font-semibold">KM Driven:</span> 80,000</p>
+                <p><span class="font-semibold">Fuel:</span> Petrol</p>
+                <p><span class="font-semibold">Transmission:</span> Manual</p>
+                <p><span class="font-semibold">Owner:</span> 1st</p>
+              </div>
+              <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
+            </div>
+          </div>
+        </div>
+        
+        <nav aria-label="Pagination" class="mt-12 flex items-center justify-center">
+          <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">
+            <span class="sr-only">Previous</span>
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+              <path clip-rule="evenodd" d="M12.79 5.23a.75.75 0 010 1.06L9.06 10l3.73 3.71a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" fill-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a aria-current="page" class="relative z-10 inline-flex items-center bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" href="#">1</a>
+          <a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">2</a>
+          <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
+          <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
+          <a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">10</a>
+          <a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#">
+            <span class="sr-only">Next</span>
+            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+              <path clip-rule="evenodd" d="M7.21 14.77a.75.75 0 010-1.06L10.94 10 7.21 6.29a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z" fill-rule="evenodd"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </main>
 <footer class="bg-white">
 <div class="container mx-auto px-6 py-8">
 <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
