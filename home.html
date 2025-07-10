@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
   <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <style type="text/tailwindcss">
     :root {
@@ -56,7 +58,25 @@
         </div>
       </div>
     </header>
-    
+    <div class="px-4 py-2 bg-white border-b border-gray-200">
+<div class="flex overflow-x-auto space-x-2 no-scrollbar">
+<button class="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 whitespace-nowrap">
+<span class="material-icons text-sm mr-1">tune</span>
+                    Filters
+                </button>
+<button class="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 whitespace-nowrap">
+<span class="material-icons text-sm mr-1">swap_vert</span>
+                    Sort by
+                </button>
+<button class="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 whitespace-nowrap">
+<span class="material-icons text-sm mr-1">near_me</span>
+                    Near me
+                </button>
+<button class="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 whitespace-nowrap">
+                    Car Category
+                </button>
+</div>
+</div>
     <main class="container mx-auto flex flex-1 gap-8 px-6 py-8">
       <aside class="hidden w-72 flex-shrink-0 lg:block">
         <div class="sticky top-28 rounded-xl bg-white p-6 shadow-sm">
@@ -264,6 +284,7 @@
         </nav>
       </div>
     </main>
+    
 <footer class="bg-white">
 <div class="container mx-auto px-6 py-8">
 <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
