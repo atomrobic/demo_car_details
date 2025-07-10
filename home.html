@@ -17,6 +17,18 @@
     .group:hover .group-hover\:block {
         display: block;
     }
+     .featured-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #ff5a5f;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 10;
+    }
   </style>
 </head>
 <body class="bg-gray-50 font-['Plus_Jakarta_Sans',_'Noto_Sans',_sans-serif]">
@@ -137,12 +149,7 @@
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">Used Cars For Sale</h1>
           <div class="flex items-center">
             <label class="sr-only" for="sort-by">Sort by</label>
-            <select class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" id="sort-by" name="sort-by">
-              <option>Relevance</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Newest Listings</option>
-            </select>
+          
           </div>
         </div>
         
@@ -166,7 +173,40 @@
               <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">View Details</button>
             </div>
           </div>
-          
+       <section class="px-4 py-10 bg-gray-100">
+  <div class="max-w-sm mx-auto">
+    <div class="group relative overflow-hidden rounded-xl bg-white shadow-lg border-2 border-yellow-200 transition-shadow duration-300 hover:shadow-xl">
+      <!-- Featured & Rare Badge -->
+      <div class="absolute top-2 left-2 z-10 flex space-x-2">
+        <span class="bg-yellow-400 text-white text-xs font-bold px-2 py-1 rounded shadow">FEATURED</span>
+        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow">RARE FIND</span>
+      </div>
+
+      <!-- Image with overlay -->
+      <div class="relative">
+        <img alt="BMW 5 Series" class="h-56 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJP-sr5Rics3yegVIs6SYg6k1zFshMmYU8LfugGafmY3SjnMI1K-RYR_ILlCwggtB1EDzFMS3tGipVyXyHlGOSCCgavTD7w_Kqul5hB4pMF7m5FJjvPgk3pZBdW0mXYm6molII_vxtduphdO0VN0SjOmypBRgc7oEx0takKXDKyBNMUrDLL8IR6WuReqKKk4m0B_TZhOrk5s8WnamGGgF9NPWDRi1HP0KDorpgev3mrVcpPTauZUedFLH-mWWhDKEnXQyfsD3XQRk"/>
+        <div class="absolute inset-0 bg-yellow-300 bg-opacity-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+      </div>
+
+      <!-- Details -->
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-gray-900">BMW 5 Series 2020 Luxury</h3>
+        <p class="mt-1 text-2xl font-extrabold text-blue-600">$32,500</p>
+        <div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+          <p><span class="font-semibold">KM Driven:</span> 25,000</p>
+          <p><span class="font-semibold">Fuel:</span> Petrol</p>
+          <p><span class="font-semibold">Transmission:</span> Automatic</p>
+          <p><span class="font-semibold">Owner:</span> 1st</p>
+        </div>
+        <button class="mt-6 w-full rounded-lg bg-[var(--primary-color)] px-4 py-2.5 font-semibold text-white shadow-sm transition-colors duration-300 hover:bg-[var(--primary-color-hover)]">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+            
           <!-- Card 2 -->
           <div class="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl">
             <div class="relative">
