@@ -116,31 +116,52 @@
       </div>
     </div>
     <!-- Week Navigation -->
-    <div class="bg-white border-b border-gray-200 px-6 py-3">
-      <div class="flex space-x-1">
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Mon 14</div>
-        </div>
-        <div class="week-day active px-4 py-2 text-sm font-medium rounded-md cursor-pointer">
-          <div>Tue 15</div>
-        </div>
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Wed 16</div>
-        </div>
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Thu 17</div>
-        </div>
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Fri 18</div>
-        </div>
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Sat 19</div>
-        </div>
-        <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
-          <div>Sun 20</div>
-        </div>
-      </div>
+<div class="bg-white border-b border-gray-200 px-4 py-3 overflow-x-auto">
+  <div class="flex space-x-2 w-max">
+    <!-- Generate day buttons -->
+    <!-- You can use a loop if you're using a templating engine or JS -->
+    <!-- Here it’s written statically for demo -->
+    <!-- Highlight active day with `bg-yellow-500 text-white` -->
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      1
     </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      2
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      3
+    </div>
+    <div class="week-day active px-4 py-2 text-sm font-medium rounded-md cursor-pointer bg-yellow-500 text-white">
+      4
+    </div>
+    <!-- ... Add up to 30 -->
+    <!-- Example: -->
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      5
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      6
+    </div>
+    <!-- Repeat till 30 -->
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      7
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      8
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      9
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      10
+    </div>
+    <div class="week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100">
+      11
+    </div>
+
+  </div>
+</div>
+
     <!-- Calendar Grid -->
     <div class="flex">
       <!-- Time Column -->
@@ -181,6 +202,43 @@
         <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
           19
         </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          20
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          21
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          22
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          23
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          24
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          25
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          26
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          27
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          28
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          29
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          30
+        </div>
+        <div class="h-16 flex items-center justify-center text-sm text-gray-600 border-b border-gray-200">
+          31
+        </div>
+        
       </div>
       <!-- Calendar Content -->
       <div class="flex-1 relative">
@@ -364,6 +422,17 @@
         document.body.appendChild(modalContainer);
       });
     });
+    const container = document.querySelector('.your-scroll-container');
+for (let i = 1; i <= 30; i++) {
+  const day = document.createElement('div');
+  day.className = "week-day px-4 py-2 text-sm font-medium text-gray-600 rounded-md cursor-pointer hover:bg-gray-100";
+  day.innerText = i;
+  container.appendChild(day);
+}
+
   </script>
+</body>
+</html>>
+             
 </body>
 </html>
